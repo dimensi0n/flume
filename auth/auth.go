@@ -47,7 +47,7 @@ func signup(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		db.Create(&User{Username: req.Username, Password: req.Password, Email: req.Email, IsConnected: 1})
+		db.Create(&User{Username: req.Username, Password: req.Password, Email: req.Email, IsConnected: 0})
 
 		db.Close()
 

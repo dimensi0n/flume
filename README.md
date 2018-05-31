@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="http://90.109.222.6:5333/flume_300ppp.png" width="400"/>
+  <img src="https://raw.githubusercontent.com/dimensi0n/flume/master/.github/logo.png" width="400"/>
 </p>
 
 <hr>

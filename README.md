@@ -38,6 +38,6 @@ Flume is based on an SQL database and it's written in Golang.
 
 You can now access to flume on the port 8080
 
-You can know take a look at the [wiki](https://github.com/dimensi0n/flume/wiki)
+You can now take a look at the [wiki](https://github.com/dimensi0n/flume/wiki)
 
 Enjoy :)

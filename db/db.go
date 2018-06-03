@@ -28,12 +28,7 @@ func GetToken(t string) {
 
 func readDb(w http.ResponseWriter, r *http.Request) {
 	if r.Header.Get("token") == Token {
-		decoder := json.NewDecoder(r.Body)
-		var req struct{ Name string }
-		err := decoder.Decode(&req)
-		if err != nil {
-			panic(err)
-		}
+		vars := mux.Vars(r)
 
 		db, err := gorm.Open("sqlite3", "./db.sqlite")
 
@@ -44,7 +39,7 @@ func readDb(w http.ResponseWriter, r *http.Request) {
 		db.AutoMigrate(&Database{})
 
 		var Db Database
-		db.First(&Db, "name = ?", req.Name)
+		db.First(&Db, "name = ?", vars["name"])
 
 		encoder := json.NewEncoder(w)
 		encoder.Encode(Db)
@@ -122,7 +117,7 @@ func writeDb(w http.ResponseWriter, r *http.Request) {
 }
 
 func DbHandler(r *mux.Router) {
-	r.HandleFunc("/db/read", readDb).Methods("GET")
+	r.HandleFunc("/db/read/{name}", readDb).Methods("GET")
 	r.HandleFunc("/db/create", createDb).Methods("POST")
 	r.HandleFunc("/db/write", writeDb).Methods("PUT")
 }

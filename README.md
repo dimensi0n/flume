@@ -23,7 +23,7 @@ Flume is a cloud that allows you to :
 
 With the power of HTTP Requests.
 
-Flume is based on an SQL database and it's written in Golang.
+Flume is based on an SQLITE database and it's written in Golang.
 ```
 
 

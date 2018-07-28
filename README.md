@@ -1,3 +1,4 @@
+<h1 align="center">[DEPRECATED]</h1>
 <p align="center">
   <img src="https://raw.githubusercontent.com/dimensi0n/flume/master/.github/logo.png" width="400"/>
 </p>
